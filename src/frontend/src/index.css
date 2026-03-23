@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.1 0.009 192;
+    --foreground: 0.88 0.009 200;
+    --card: 0.14 0.009 192;
+    --card-foreground: 0.88 0.009 200;
+    --popover: 0.14 0.009 192;
+    --popover-foreground: 0.88 0.009 200;
+    --primary: 0.72 0.086 76;
+    --primary-foreground: 0.12 0.009 192;
+    --secondary: 0.17 0.009 192;
+    --secondary-foreground: 0.88 0.009 200;
+    --muted: 0.17 0.009 192;
+    --muted-foreground: 0.63 0.013 205;
+    --accent: 0.72 0.086 76;
+    --accent-foreground: 0.12 0.009 192;
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.26 0.011 192;
+    --input: 0.26 0.011 192;
+    --ring: 0.72 0.086 76;
+    --success: 0.68 0.16 152;
+    --success-foreground: 0.14 0.009 192;
+    --gold: 0.72 0.086 76;
+    --gold-light: 0.76 0.086 76;
+    --message-bg: 0.22 0.05 152;
+    --message-text: 0.82 0.12 152;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: oklch(0.1 0.009 192);
+  }
+}
+
+@layer utilities {
+  .glow-gold {
+    box-shadow: 0 0 12px oklch(0.72 0.086 76 / 0.35), 0 0 32px
+      oklch(0.72 0.086 76 / 0.15);
+  }
+  .glow-gold-text {
+    text-shadow: 0 0 16px oklch(0.72 0.086 76 / 0.55);
+  }
+  .glow-green {
+    box-shadow: 0 0 10px oklch(0.68 0.16 152 / 0.4);
+  }
+  .border-gold {
+    border-color: oklch(0.72 0.086 76);
+  }
+  .xp-bar-track {
+    background: oklch(0.17 0.009 192);
+    border: 1px solid oklch(0.26 0.011 192);
+  }
+  .xp-bar-fill {
+    background: linear-gradient(
+      90deg,
+      oklch(0.65 0.086 76),
+      oklch(0.8 0.086 76)
+    );
+    box-shadow: 0 0 8px oklch(0.72 0.086 76 / 0.6);
+  }
+}
